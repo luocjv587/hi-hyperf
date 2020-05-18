@@ -53,6 +53,7 @@ WORKDIR /opt/www
 # RUN composer install --no-dev --no-scripts
 
 COPY . /opt/www
+RUN composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 RUN composer install --no-dev -o
 
 EXPOSE 9501
